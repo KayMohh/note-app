@@ -1,5 +1,7 @@
 from noteapp import db
 from flask_login import UserMixin
+from sqlalchemy import func
+# from dictutil import func
 
 
 class Note(db.Model):
@@ -12,7 +14,7 @@ class Note(db.Model):
 
 
 class User(db.Model, UserMixin):
-    id = db.Colum(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
     firstname = db.Column(db.String(150))
