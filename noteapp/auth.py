@@ -48,5 +48,4 @@ def signup():
             flash('Password must be greater than 7 characters', category='error')
         else:
             flash('Account Created Successfully', category='success')
-
     return render_template('signup.html')
