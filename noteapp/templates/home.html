@@ -1,4 +1,23 @@
 {% extends "base.html"%} {% block title%} Changed {% endblock %} {% block
 contents %}
-<h1>This is the Home Page</h1>
+<h1 align="center">Notes</h1>
+<ul class="list-group list-group-flush" id="notes">
+  {% for note in user.notes %}
+  <li class="list-group-item">{{ note.data }}</li>
+  {% endfor %}
+</ul>
+<form methods="POST">
+  <textarea
+    name="note"
+    id="note"
+    class="form-control"
+    cols=""
+    rows=""
+  ></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-dark">Add Note</button>
+  </div>
+</form>
+
 {% endblock %}
